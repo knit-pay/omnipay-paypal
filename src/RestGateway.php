@@ -350,7 +350,9 @@ class RestGateway extends AbstractGateway
             $this->getToken(true);
         }
 
-        return parent::createRequest($class, $parameters);
+        $request = parent::createRequest($class, $parameters);
+        $request->setReferrerCode('LogicBridgeTechnoMartLLP_SI');
+        return $request;
     }
 
     //
