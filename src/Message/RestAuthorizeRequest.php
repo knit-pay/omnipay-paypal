@@ -259,7 +259,7 @@ class RestAuthorizeRequest extends AbstractRestRequest
                     'credit_card_id' => $this->getCardReference(),
                 ),
             );
-        } elseif ($this->getCard()) {
+        } elseif ($this->getCard() && "" !== $this->getCard()->getNumber()) {
             $this->validate('amount', 'card');
             $this->getCard()->validate();
 
