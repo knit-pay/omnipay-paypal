@@ -55,11 +55,20 @@ class RestCompletePurchaseRequest extends AbstractRestRequest
      */
     public function getData()
     {
-        $this->validate('transactionReference', 'payerId');
+        if (null === $this->parameters->get('payerId') && !empty($_GET['PayerID'])) {
+            $payerId = $_GET['PayerID'];
 
-        $data = array(
-            'payer_id' => $this->getPayerId()
-        );
+            $this->setPayerId($payerId);
+            $data = array(
+                'payer_id' => $payerId
+            );
+        } else {
+            $this->validate('transactionReference', 'payerId');
+
+            $data = array(
+                'payer_id' => $this->getPayerId()
+            );
+        }
 
         return $data;
     }
