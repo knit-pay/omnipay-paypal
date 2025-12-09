@@ -9,10 +9,10 @@ processing library for PHP. This package implements PayPal support for Omnipay.
 
 ## Installation
 
-Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply require `league/omnipay` and `knit-pay/omnipay-paypal` with Composer:
+Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply require `omnipay/common` and `knit-pay/omnipay-paypal` with Composer:
 
 ```
-composer require league/omnipay knit-pay/omnipay-paypal
+composer require omnipay/common knit-pay/omnipay-paypal
 ```
 
 
